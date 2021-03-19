@@ -8,9 +8,15 @@ Mannschaft:
 {1}
 '@
 
+$teamIndexVorlage = @'
+# Fußball Teams
+
+{0}
+'@
+
 Remove-Item -Path "$basisPfad\Teams\*"
 
-foreach ($teamFolder in Get-ChildItem "$basisPfad\_database\teams") {
+$teamLinks = foreach ($teamFolder in Get-ChildItem "$basisPfad\_database\teams") {
     $teamName = $teamFolder.Name
     Write-Host "Verarbeite Team: $teamName"
 
@@ -22,4 +28,8 @@ foreach ($teamFolder in Get-ChildItem "$basisPfad\_database\teams") {
     }
 
     $teamVorlage -f $teamName, ($teamText -join "`n") | Set-Content -Path "$basisPfad\Teams\$teamName.md"
+
+    '+ [{0}](Teams/{0}.html)' -f $teamName
 }
+
+$teamIndexVorlage -f ($teamLinks -join "`n") | Set-Content -Path "$basisPfad\Teams.md"
