@@ -14,8 +14,8 @@ jobs:
       run: .\_build\createTeams.ps1
       shell: pwsh
     - name: Add Files
-        run: |
-          git add -A
+      run: |
+        git add -A
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
       with:
