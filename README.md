@@ -7,3 +7,8 @@ Des hier ist ein Beispieltext, der _sehr_ wichtig und **absolut** unveränderlic
 |Name|Ablöse|
 |Klaus|1.000.000€|
 |Peter|1€|
+
+## Inhalte
+
++ [Teams Liste](Teams.html)
++ [Kicker De](https://kicker.de)
