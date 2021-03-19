@@ -1,1 +1,1 @@
-# KickerMgmt.github.io
+# Kicker Manager - Die Fußballteam Management Lösung
