@@ -8,6 +8,8 @@ Mannschaft:
 {1}
 '@
 
+Remove-Item -Path "$basisPfad\Teams\*"
+
 foreach ($teamFolder in Get-ChildItem "$basisPfad\_database\teams") {
     $teamName = $teamFolder.Name
     Write-Host "Verarbeite Team: $teamName"
@@ -19,5 +21,5 @@ foreach ($teamFolder in Get-ChildItem "$basisPfad\_database\teams") {
         '|{0}|{1}|{2}|' -f $teamObject.Name, $teamObject.Alter, $teamObject.Position
     }
 
-    $teamVorlage -f $teamName, $teamText | Set-Content -Path "$basisPfad\Teams\$teamName.md"
+    $teamVorlage -f $teamName, ($teamText -join "`n") | Set-Content -Path "$basisPfad\Teams\$teamName.md"
 }
