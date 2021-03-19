@@ -1,0 +1,15 @@
+﻿on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: windows-2019
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build Teams
+      run: .\_build\createTeams.ps1
+      shell: pwsh
