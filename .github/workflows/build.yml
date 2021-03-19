@@ -23,3 +23,4 @@ jobs:
         title: Rebuilding Teams
         body: Rebuilding Teams
         branch: main
+        base: main
